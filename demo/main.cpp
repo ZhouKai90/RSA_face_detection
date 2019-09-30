@@ -24,18 +24,18 @@ void plot_face_rect_keypoint(const std::string landmaerk_path, std::string img_n
         if (keyPoints) {
         // 图片画出关键点
             for (int j = 0; j < 5; j++) 
-                cv::circle(mat, ldPerImg.keyPoints[j], 1, cv::Scalar(0, 0, 255), 2);
+                cv::circle(mat, ldPerImg.keyPoints[j], 1, cv::Scalar(0, 0, 255), 1);
         }
         // 图片画出人脸框
         if (first_face) {
             first_face = false;
             cv::rectangle(mat, cv::Point(ldPerImg.bbox[0], ldPerImg.bbox[1]), \
                             cv::Point(ldPerImg.bbox[2], ldPerImg.bbox[3]), \
-                            cv::Scalar(255, 255, 0), 2, 2, 0);
+                            cv::Scalar(0, 0, 255), 1, 1, 0);
         } else {
             cv::rectangle(mat, cv::Point(ldPerImg.bbox[0], ldPerImg.bbox[1]), \
                             cv::Point(ldPerImg.bbox[2], ldPerImg.bbox[3]), \
-                            cv::Scalar(255, 255, 0), 2, 2, 0);
+                            cv::Scalar(0, 0, 255), 1, 1, 0);
             continue;
         }
     }
